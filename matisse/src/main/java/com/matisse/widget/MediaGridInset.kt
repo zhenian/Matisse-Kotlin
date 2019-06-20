@@ -15,11 +15,11 @@ class MediaGridInset : RecyclerView.ItemDecoration {
         this.mIncludeEdge = mIncludeEdge
     }
 
-    override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
-        val position = parent?.getChildAdapterPosition(view) ?: 0
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        val position = parent.getChildAdapterPosition(view)
         val column = position % mSpanCount
 
-        outRect?.apply {
+        outRect.apply {
             if (mIncludeEdge) {
                 left = mSpacing - column * mSpacing / mSpanCount
                 right = (column + 1) * mSpacing / mSpanCount
