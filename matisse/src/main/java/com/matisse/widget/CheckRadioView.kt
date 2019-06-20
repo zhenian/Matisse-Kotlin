@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
-import androidx.core.content.res.ResourcesCompat
-import androidx.appcompat.widget.AppCompatImageView
 import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.res.ResourcesCompat
 import com.matisse.R
 
 class CheckRadioView : AppCompatImageView {
@@ -16,7 +16,9 @@ class CheckRadioView : AppCompatImageView {
     private var mSelectedColor: Int = 0
     private var mUnSelectUdColor: Int = 0
 
-    constructor(context: Context) : this(context, null)
+    constructor(context: Context) : super(context){
+        init()
+    }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         init()
@@ -36,11 +38,11 @@ class CheckRadioView : AppCompatImageView {
         if (enable) {
             setImageResource(R.drawable.ic_preview_radio_on)
             mDrawable = drawable
-            mDrawable!!.setColorFilter(mSelectedColor, PorterDuff.Mode.SRC_IN)
+            mDrawable?.setColorFilter(mSelectedColor, PorterDuff.Mode.SRC_IN)
         } else {
             setImageResource(R.drawable.ic_preview_radio_off)
             mDrawable = drawable
-            mDrawable!!.setColorFilter(mUnSelectUdColor, PorterDuff.Mode.SRC_IN)
+            mDrawable?.setColorFilter(mUnSelectUdColor, PorterDuff.Mode.SRC_IN)
         }
     }
 
