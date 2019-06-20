@@ -34,7 +34,7 @@ Matisse核心功能：[https://github.com/zhihu/Matisse](https://github.com/zhih
         <activity android:name="com.matisse.ui.view.MatisseActivity" />
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">

@@ -8,7 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import com.gyf.barlibrary.ImmersionBar
 import com.matisse.R
@@ -117,9 +117,9 @@ class MatisseActivity : AppCompatActivity(), MediaSelectionFragment.SelectionPro
         button_back.setOnClickListener(this)
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        mSelectedCollection.onSaveInstanceState(outState!!)
+        mSelectedCollection.onSaveInstanceState(outState)
         mAlbumCollection.onSaveInstanceState(outState)
         outState.putBoolean(ConstValue.CHECK_STATE, mOriginalEnable)
     }

@@ -20,7 +20,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -42,15 +42,15 @@ androidExtensions {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
     /*ImageViewTouch*/
     implementation 'it.sephiroth.android.library.imagezoom:library:1.0.4'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:$rootProject.ext.support_library"
-    implementation "com.android.support:design:$rootProject.ext.support_library"
-    implementation "com.android.support:recyclerview-v7:$rootProject.ext.support_library"
-    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraint"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.appcompat}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "com.google.android.material:material:${rootProject.ext.material}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerview}"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     compileOnly 'com.gyf.barlibrary:barlibrary:2.3.0'
 }
 

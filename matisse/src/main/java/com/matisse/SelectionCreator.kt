@@ -20,9 +20,9 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo.*
 import android.os.Build
-import android.support.annotation.IntDef
-import android.support.annotation.RequiresApi
-import android.support.annotation.StyleRes
+import androidx.annotation.IntDef
+import androidx.annotation.RequiresApi
+import androidx.annotation.StyleRes
 import com.matisse.engine.ImageEngine
 import com.matisse.entity.CaptureStrategy
 import com.matisse.filter.Filter
@@ -190,7 +190,7 @@ internal constructor(private val mMatisse: Matisse, mimeTypes: Set<MimeType>, me
 
     /**
      * Capture strategy provided for the location to save photos including internal and external
-     * storage and also a authority for [android.support.v4.content.FileProvider].
+     * storage and also a authority for [androidx.core.content.FileProvider].
      *
      * @param captureStrategy [CaptureStrategy], needed only when capturing is enabled.
      * @return [SelectionCreator] for fluent API.
